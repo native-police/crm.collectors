@@ -6,4 +6,4 @@ foreach ($user in $users) {
     $groups = $user.memberof -join ';'
     $results += New-Object psObject -Property @{'User'=$user.name;'Groups'= $groups}
     }
-$results | Where-Object { $_.groups -notmatch 'Челябинск.Access.VPN' } | Select-Object user
+$results | Where-Object { $_.groups -notmatch 'crm.collectorgroup' } | Select-Object user
